@@ -1,6 +1,3 @@
----
-output: html_document
----
 # Code Book for Coursera "Getting and Cleaning Data" course project
 
 ## Original data
