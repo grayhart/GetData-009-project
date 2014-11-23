@@ -15,45 +15,45 @@ The R code used to create the tidy dataset are in run_analysis.R which can be ru
 The following steps were used to create the final tidy data:
 * Merge the Train datasets and the Test datasets
 * Extract only those variables containing the string "std" or "mean" in whichever case mix they appear.
-** Use grep to identify the columns
-** Use dplyr select to subset the data
++ Use grep to identify the columns
++ Use dplyr select to subset the data
 * Added ActivityName field to the Y merged dataset and populate it using the Text names of the activities
 * Add Column headers to merged X dataset using the field names provided in the features dataset.
 * Prepare the Tidy Data
-** Add Subject and ActivityName columns to the front of the Dataset. Change Subject to be a factor
-** Melt the dataset to create a variable with all features for each Subject and ActivityName
-** Use dcast to summarise features and create means for each Subject and ActivityName
++ Add Subject and ActivityName columns to the front of the Dataset. Change Subject to be a factor
++ Melt the dataset to create a variable with all features for each Subject and ActivityName
++ Use dcast to summarise features and create means for each Subject and ActivityName
 * Tidy the column names
-** change column prefixes from 't' to 'time and 'f' to 'frequency'
-** remove occurences of '()'
-** use make.names() to make valid column names for all columns
++ change column prefixes from 't' to 'time and 'f' to 'frequency'
++ remove occurences of '()'
++ use make.names() to make valid column names for all columns
 * Write the tidy data out to a tidy dataset
-** The data should be read back in using  ```{r}readTidyData<-read.table("tidydata.txt",header=TRUE)```
++ The data should be read back in using  ```{r}readTidyData<-read.table("tidydata.txt",header=TRUE)```
 
 ## Data Columns
 ### Non Mean Columns
 
 1 Subject   
         Indicates which of the 30 subjects the row refers to
-        * Factor with values from  1-30 
+        + Factor with values from  1-30 
 2 ActivityName
         Indicates the name of the Activity that was being performed
         Factor with the folowing values:
-        * "WALKING"
-        * "WALKING_UPSTAIRS"
-        * "WALKING_DOWNSTAIRS"
-        * "SITTING"
-        * "STANDING"
-        * "LAYING"
+        + "WALKING"
+        + "WALKING_UPSTAIRS"
+        + "WALKING_DOWNSTAIRS"
+        + "SITTING"
+        + "STANDING"
+        + "LAYING"
 ### Mean Columns
 All of the following columns are means of the equivalent features in the original data set. All are numeric
 
 3 Mean.of.timeBodyAcc.mean.X
-        * Numeric
+        + Numeric
 4 Mean.of.timeBodyAcc.mean.Y                   
-        * Numeric
+        + Numeric
 5 Mean.of.timeBodyAcc.mean.Z                   
-        * Numeric
+        + Numeric
 6 Mean.of.timeBodyAcc.std.X                    
 7 Mean.of.timeBodyAcc.std.Y                    
 8 Mean.of.timeBodyAcc.std.Z                    
