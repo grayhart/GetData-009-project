@@ -76,9 +76,13 @@ Melt the data as an interim step. This produces a narrow table with a row for ea
 Use dcast to calculate the means from the molten data. This takes the presviously melted dataset and uses it to summarise the measurements using mean. The results will be shown in a table with a row for each activity for each user. A column is created for each mean of each measurement 
 
 Tidy the column names:
+
 1. Change the 't' and 'f' at the start of variables to "time" and "frequency". This uses 'sub' with a regular expression to find column names starting with t or starting with f. 
+
 2. Delete any occurences of '()'. This uses gsub to make sure all occurrences are replaced. 
+
 3. Remove any invaild characters. This uses maake.names which produces names consisting only of valid R characters. It also makes sure each column name is unique.
+
 4. The columns now contain the means of the measurements so the name needs to reflect that. Add "mean.of" to the front of all columns which now contain the means. This uses paste to add "Mean of" to the front of each variable. The spearator of '.' is used because space is not a valid R character. 
 
 
