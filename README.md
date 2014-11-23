@@ -31,7 +31,7 @@ Steps
 4.Appropriately labels the data set with descriptive variable names. 
 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-#### Step 1.Merge Traing and Test sets to create one data set
+#### STEP 1.Merge Train and Test sets to create one data set
 Read in the X, Y and Subject datasets from the train and the test folders. Combine them using rbind.
 Read in the features and activity labels datasets
 
